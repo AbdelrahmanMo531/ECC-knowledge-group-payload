@@ -1,0 +1,498 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   ECC Knowledge Group — Brand Identity Guidelines 2026
+   Every token below is traceable to a page of the guideline PDF.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Typography (guideline p.14–16)
+
+   Somar Sans is the primary brand face and Frank Ruhl Libre the display serif
+   (it is the letterform of the ECC wordmark).
+
+   Frank Ruhl Libre ships with the site: it is published under the SIL Open
+   Font Licence, so the two weights the design uses are built from the upstream
+   variable font, subset to Latin and Latin Extended, and committed under
+   /public/fonts with the licence beside them. The Hebrew the family also
+   carries is dropped — it is most of the file, and this site is English and
+   Arabic.
+
+   Somar Sans is licensed and cannot be committed here. Drop
+   SomarSans-Regular.woff2, SomarSans-Medium.woff2 and SomarSans-Bold.woff2
+   into /public/fonts and they take over on the next build. Until they arrive
+   every page renders in the fallback below, which is a different face at a
+   different width — so expect the type to shift on the day the real files
+   land. Worth adding `size-adjust` and `ascent-override` to a fallback
+   @font-face once the metrics can be read off the real file; they cannot be
+   guessed at from here.
+
+   `npm test` fails when a file declared here is not in /public/fonts, because
+   a missing webfont breaks nothing, logs a 404 nobody reads, and quietly
+   serves the whole site in a system font.
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Somar Sans';
+  src: url('/fonts/SomarSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Somar Sans';
+  src: url('/fonts/SomarSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Somar Sans';
+  src: url('/fonts/SomarSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  src: url('/fonts/FrankRuhlLibre-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  src: url('/fonts/FrankRuhlLibre-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* ------------------------------------------------------------------
+     Colour — solid palette (guideline p.12)
+     ------------------------------------------------------------------ */
+
+  /* Dark Teal — confidence, stability, maturity. The primary brand colour. */
+  --color-teal-50: #e8f0ef;
+  --color-teal-100: #c4dad8;
+  --color-teal-200: #9cc2bf;
+  --color-teal-300: #6ba39f;
+  --color-teal-400: #3d837e;
+  --color-teal-500: #058e83;
+  --color-teal-600: #04695f;
+  --color-teal-700: #004442;
+  --color-teal-800: #003633;
+  --color-teal-900: #002522;
+
+  /* Named brand aliases — use these in components, not the numeric ramp. */
+  --color-brand-teal: #004442;
+  --color-brand-turquoise: #058e83;
+  --color-brand-gold: #e7dcaa;
+  --color-brand-beige: #f9f6e8;
+  --color-brand-sand: #e4d6c8;
+  --color-brand-ink: #333333;
+  --color-brand-accent: #fd7218;
+
+  /* Surfaces */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f9f6e8;
+  --color-surface-sand: #e4d6c8;
+  --color-surface-deep: #004442;
+
+  /* ------------------------------------------------------------------
+     Typography (guideline p.14–16)
+     ------------------------------------------------------------------ */
+  --font-sans:
+    'Somar Sans', 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif:
+    'Frank Ruhl Libre', ui-serif, Georgia, Cambria, 'Times New Roman', serif;
+  --font-arabic:
+    'Somar Sans', 'Noto Kufi Arabic', 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma,
+    sans-serif;
+
+  /* Display sizes — the guideline sets headings in tight, confident Somar Sans. */
+  --text-display: 3.75rem;
+  --text-display--line-height: 1.06;
+  --text-display--letter-spacing: -0.025em;
+  --text-hero: 2.75rem;
+  --text-hero--line-height: 1.1;
+  --text-hero--letter-spacing: -0.02em;
+
+  /* ------------------------------------------------------------------
+     Motion
+     ------------------------------------------------------------------ */
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ------------------------------------------------------------------
+     Radii — the shield mark is soft-cornered; the UI echoes it.
+     ------------------------------------------------------------------ */
+  --radius-brand: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   Gradients (guideline p.13)
+   -------------------------------------------------------------------------- */
+@utility bg-brand-gradient-teal {
+  background-image: linear-gradient(
+    135deg,
+    #058e83 0%,
+    #046b64 45%,
+    #004442 100%
+  );
+}
+
+@utility bg-brand-gradient-gold {
+  background-image: linear-gradient(
+    135deg,
+    #b8862f 0%,
+    #e7dcaa 45%,
+    #c9a24d 100%
+  );
+}
+
+/* Text set in the gold gradient — used sparingly, for accents only. */
+@utility text-brand-gradient-gold {
+  background-image: linear-gradient(135deg, #b8862f 0%, #e7dcaa 50%, #c9a24d 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   Logo pattern (guideline p.17) — the mark repeated as a background texture.
+   Rendered at very low opacity so it reads as tone, never as decoration.
+   -------------------------------------------------------------------------- */
+@utility bg-logo-pattern {
+  background-image: url('/brand/ecc-mark-cream.svg');
+  background-repeat: repeat;
+  background-size: 132px auto;
+}
+
+/* --------------------------------------------------------------------------
+   Marquee — the accreditation logo strip.
+
+   The track holds two identical copies of the list, so translating by exactly
+   -50% lands the second copy where the first began and the loop is seamless.
+   -------------------------------------------------------------------------- */
+@keyframes ecc-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ecc-marquee {
+  animation: ecc-marquee 42s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /*
+     No automatic movement: the strip becomes a scroller the visitor drives.
+     `w-max` is overridden so the track can actually overflow and scroll.
+  */
+  .ecc-marquee {
+    width: 100%;
+    animation: none;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+  }
+}
+
+/**
+ * A value that carries its own direction.
+ *
+ * The block-level rule below covers a paragraph or a table cell, but not a
+ * `<span>` holding one short value out of the CMS. "6–12 weeks" dropped into an
+ * Arabic line comes out as "weeks 12–6": the digits are neutral to the bidi
+ * algorithm, so the run is reordered around them and the card states a
+ * duration nobody offers.
+ *
+ * `plaintext` on an inline box isolates it and takes its direction from its own
+ * first letter, which is the question being got wrong. Wanted wherever a value
+ * an editor typed sits inline — a duration, a credit count, a fee.
+ */
+@utility bidi-auto {
+  unicode-bidi: plaintext;
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-brand-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Arabic content keeps the brand's Arabic stack and RTL flow (p.16). */
+  [lang='ar'] {
+    font-family: var(--font-arabic);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  /*
+   * The header is sticky, so an anchor jump would otherwise land with the
+   * section's first line hidden underneath it.
+   */
+  section[id],
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /*
+    Text finds its own direction, paragraph by paragraph.
+
+    The page is right-to-left in Arabic, but not everything on it will be
+    Arabic: a programme is titled in English, a partner is named in English,
+    and until a translation is published the copy underneath is English too.
+    Dropped into a right-to-left paragraph, that sentence keeps its words in
+    order but loses its full stop to the far end — the punctuation is
+    direction-neutral, so it goes wherever the paragraph says. Every reader
+    sees it, and it reads as a broken page rather than as an untranslated one.
+
+    `isolate` seals each block off from the bidi context around it, so a run of
+    English inside an Arabic paragraph keeps its words in order and cannot drag
+    the text beside it out of place.
+
+    What it deliberately does *not* do is change the block's direction. That is
+    the page's to decide: on an Arabic page every block runs right to left and
+    sits on the right, whether it says "مؤهلات معتمدة" or "IBAS". A paragraph
+    that picked its own side would leave an abbreviation, an institution's name
+    or an untranslated line stranded on the left of a right-to-left column.
+
+    `unicode-bidi: plaintext` is the other choice — direction per paragraph,
+    from its own first letter — and it is what this used to be. It puts an
+    English full stop at the end of its own sentence, which is nicer, but it
+    also decides the paragraph's alignment, and there is no way to keep one
+    without the other. It is still available as the `bidi-auto` utility for a
+    block that genuinely wants it. Everything else follows the page.
+  */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  dt,
+  dd,
+  summary,
+  figcaption,
+  blockquote,
+  th,
+  td {
+    unicode-bidi: isolate;
+  }
+
+  /*
+    Note what is *not* here: a `text-align` declaration.
+
+    The first attempt at this pinned `text-align: right` on each of the blocks
+    above under `[dir='rtl']`, and centred sections stopped being centred. Most
+    of them are centred by a `text-center` on a wrapping element, which the
+    heading and paragraph inside inherit — and an inherited value always loses
+    to one declared on the element itself, whatever layer it is in. Leaving
+    alignment alone means it stays `start`, which resolves right in a
+    right-to-left page and centre wherever a component asks for centre.
+  */
+
+  /*
+    A phone number and an email address are written left to right in every
+    language. Left to the bidi algorithm, `+971 4 123 4567` in an Arabic line
+    comes out with the country code at the wrong end — a number nobody can dial
+    read back to them as though it were correct.
+  */
+  a[href^='tel:'],
+  a[href^='mailto:'],
+  [dir='ltr'] {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-turquoise);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Rich text coming out of WordPress. The CMS emits raw block HTML, so the
+   styling has to live here rather than on the elements themselves.
+   -------------------------------------------------------------------------- */
+@layer components {
+  .prose-ecc {
+    color: color-mix(in srgb, var(--color-brand-ink) 88%, white);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .prose-ecc > * + * {
+    margin-top: 1.25em;
+  }
+
+  .prose-ecc h2 {
+    margin-top: 2em;
+    color: var(--color-brand-teal);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+
+  .prose-ecc h3 {
+    margin-top: 1.75em;
+    color: var(--color-brand-teal);
+    font-size: 1.3125rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .prose-ecc a {
+    color: var(--color-brand-turquoise);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .prose-ecc a:hover {
+    color: var(--color-brand-teal);
+  }
+
+  .prose-ecc strong {
+    color: var(--color-brand-teal);
+    font-weight: 700;
+  }
+
+  .prose-ecc ul,
+  .prose-ecc ol {
+    padding-inline-start: 1.35em;
+  }
+
+  .prose-ecc ul {
+    list-style: disc;
+  }
+
+  .prose-ecc ol {
+    list-style: decimal;
+  }
+
+  .prose-ecc li + li {
+    margin-top: 0.5em;
+  }
+
+  .prose-ecc li::marker {
+    color: var(--color-brand-turquoise);
+  }
+
+  .prose-ecc blockquote {
+    border-inline-start: 3px solid var(--color-brand-gold);
+    padding-inline-start: 1.25em;
+    color: var(--color-brand-teal);
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-style: italic;
+  }
+
+  .prose-ecc img,
+  .prose-ecc figure {
+    border-radius: var(--radius-brand);
+  }
+
+  .prose-ecc figcaption {
+    margin-top: 0.6em;
+    color: color-mix(in srgb, var(--color-brand-ink) 65%, white);
+    font-size: 0.875rem;
+  }
+
+  /*
+     The same prose, on a dark ground — the partner hero, where the editor's
+     introduction sits under the institution's name. Only the colours change;
+     rhythm and sizing are inherited.
+  */
+  .prose-on-dark {
+    color: color-mix(in srgb, var(--color-brand-beige) 78%, transparent);
+  }
+
+  .prose-on-dark h2,
+  .prose-on-dark h3,
+  .prose-on-dark strong,
+  .prose-on-dark blockquote {
+    color: var(--color-brand-beige);
+  }
+
+  .prose-on-dark a {
+    color: var(--color-brand-gold);
+  }
+
+  .prose-on-dark a:hover {
+    color: var(--color-brand-beige);
+  }
+
+  .prose-on-dark li::marker {
+    color: var(--color-brand-gold);
+  }
+
+  .prose-ecc table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+
+  .prose-ecc th,
+  .prose-ecc td {
+    border: 1px solid var(--color-surface-sand);
+    padding: 0.625rem 0.875rem;
+    text-align: start;
+  }
+
+  .prose-ecc th {
+    background-color: var(--color-surface-muted);
+    color: var(--color-brand-teal);
+    font-weight: 700;
+  }
+}
