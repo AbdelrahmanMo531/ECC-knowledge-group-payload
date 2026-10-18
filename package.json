@@ -1,0 +1,55 @@
+{
+  "name": "ecc-knowledge-group",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ECC Knowledge Group — Next.js site with Payload CMS (headless, same app).",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test \"src/**/*.test.ts\"",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
+    "migrate:create": "cross-env NODE_OPTIONS=--no-deprecation payload migrate:create",
+    "seed": "cross-env NODE_OPTIONS=--no-deprecation payload run src/scripts/seed.ts",
+    "import:wordpress": "cross-env NODE_OPTIONS=--no-deprecation payload run src/scripts/import-wordpress.ts",
+    "seo:keywords": "cross-env NODE_OPTIONS=--no-deprecation payload run src/scripts/apply-keywords.ts"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "3.91.0",
+    "@payloadcms/email-nodemailer": "3.91.0",
+    "@payloadcms/next": "3.91.0",
+    "@payloadcms/plugin-redirects": "3.91.0",
+    "@payloadcms/plugin-seo": "3.91.0",
+    "@payloadcms/richtext-lexical": "3.91.0",
+    "@payloadcms/storage-vercel-blob": "3.91.0",
+    "@payloadcms/ui": "3.91.0",
+    "cross-env": "^7.0.3",
+    "graphql": "^16.8.2",
+    "next": "16.4.2",
+    "payload": "3.91.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/jsdom": "^28.0.3",
+    "@types/node": "22.19.9",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "16.4.2",
+    "jsdom": "28.0.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "5.7.3"
+  }
+}

@@ -1,0 +1,926 @@
+{
+  "source": "ECC_Keywords.xlsx — sheet \"Ahmed Hassan Handover\" (keyword → published URL on ecc-group.ae)",
+  "entries": [
+    {
+      "path": "/إدارة-سلسلة-الإمداد",
+      "keyword": "إدارة سلسلة الإمداد",
+      "related": [
+        "سلسلة التوريد والامداد",
+        "تخصص إدارة سلسلة التوريد والخدمات اللوجستية",
+        "تخصص إدارة سلاسل الإمداد واللوجستيات"
+      ]
+    },
+    {
+      "path": "/التسويق-الرقمي",
+      "keyword": "التسويق الرقمي",
+      "related": [
+        "التسويق الالكتروني",
+        "استراتيجيات التسويق"
+      ]
+    },
+    {
+      "path": "/إدارة-المشاريع",
+      "keyword": "إدارة المشاريع",
+      "related": [
+        "ماجستير ادارة مشاريع",
+        "إدارة المهام",
+        "برنامج ادارة المشاريع"
+      ]
+    },
+    {
+      "path": "/التحول-الرقمي",
+      "keyword": "التحول الرقمي",
+      "related": [
+        "الذكاء الاصطناعي في الأعمال",
+        "الحوسبة السحابية"
+      ]
+    },
+    {
+      "path": "/إدارة-العمليات",
+      "keyword": "إدارة العمليات",
+      "related": [
+        "تحسين العمليات التشغيلية",
+        "إدارة الجودة الشاملة"
+      ]
+    },
+    {
+      "path": "/إدارة-الموارد-البشرية",
+      "keyword": "إدارة الموارد البشرية",
+      "related": [
+        "الادارة العامة للموارد البشرية",
+        "تخصص ادارة الموارد البشرية",
+        "برنامج ادارة الموارد البشرية",
+        "تدريب وتطوير الموظفين",
+        "استقطاب المواهب"
+      ]
+    },
+    {
+      "path": "/الإدارة-المالية",
+      "keyword": "الإدارة المالية",
+      "related": [
+        "تحليل البيانات المالية",
+        "اقسام الادارة المالية",
+        "ماجستير ادارة مالية"
+      ]
+    },
+    {
+      "path": "/كيف-يصنع-الابتكار-وريادة-الأعمال-مستق",
+      "keyword": "الابتكار وريادة الأعمال",
+      "related": [
+        "تسويق الأفكار الابتكارية"
+      ]
+    },
+    {
+      "path": "/إدارة-المخاطر-القوة-الدافعة-وراء-استر",
+      "keyword": "إدارة المخاطر",
+      "related": [
+        "تأمين الأعمال",
+        "ماجستير ادارة مخاطر",
+        "ادارة المخاطر والازمات",
+        "تخصص ادارة المخاطر والتامين",
+        "إدارة المخاطر المالية"
+      ]
+    },
+    {
+      "path": "/تحليل-الأعمال-هو-أساس-اتخاذ-القرارات-ا",
+      "keyword": "تحليل الأعمال",
+      "related": [
+        "تحليل المخاطر المالية",
+        "تحليل السوق"
+      ]
+    },
+    {
+      "path": "/ماجستير-علاقات-عامة",
+      "keyword": "ماجستير علاقات عامة",
+      "related": [
+        "تخصصات الماجستير في العلاقات العامة",
+        "ماجستير علاقات عامة باللغة العربية"
+      ]
+    },
+    {
+      "path": "/دكتوراه-إدارة-الأعمال-قمة-التميز-المه",
+      "keyword": "دكتوراة ادارة الاعمال",
+      "related": [
+        "دكتوراه إدارة أعمال عن بعد",
+        "دكتوراه إدارة أعمال في السعودية",
+        "تخصصات ادارة اعمال",
+        "دكتوراة عن بعد"
+      ]
+    },
+    {
+      "path": "/blogs/mba-in-healthcare-management",
+      "keyword": "mba in healthcare management",
+      "related": [
+        "mba in healthcare management online programs",
+        "mba in healthcare management degree",
+        "Online Healthcare MBA"
+      ]
+    },
+    {
+      "path": "/تخصصات-الماجستير-بوابة-التميز-في-سوق-ا",
+      "keyword": "تخصصات الماجستير",
+      "related": [
+        "تخصصات الماجستير المهني",
+        "أفضل تخصصات الماجستير",
+        "تخصصات الماستر"
+      ]
+    },
+    {
+      "path": "/بكالوريوس-إدارة-الأعمال-مفتاح-التميز",
+      "keyword": "بكالوريوس إدارة الأعمال",
+      "related": [
+        "بكالوريوس إدارة أعمال عن بعد",
+        "بكالوريوس ادارة",
+        "مواد بكالوريوس ادارة اعمال"
+      ]
+    },
+    {
+      "path": "/ماجستير-إدارة-الموارد-البشرية",
+      "keyword": "ماجستير ادارة الموارد البشرية",
+      "related": [
+        "ماجستير إدارة الأعمال في الموارد البشرية",
+        "MBA موارد بشرية",
+        "تخصص اتش ار"
+      ]
+    },
+    {
+      "path": "/ماجستير-إدارة-الجودة-بوابة-التميز-في-ع",
+      "keyword": "ماجستير إدارة الجودة",
+      "related": [
+        "تخصص إدارة الجودة",
+        "ماجستير الجودة الشاملة"
+      ]
+    },
+    {
+      "path": "/ماجستير-المحاسبة",
+      "keyword": "ماجستير المحاسبة",
+      "related": [
+        "ماجستير المحاسبة المالية",
+        "ماجستير إدارة الأعمال في المحاسبة",
+        "ماجستير محاسبة عن بعد",
+        "تخصصات ماجستير المحاسبة"
+      ]
+    },
+    {
+      "path": "/مسارات-إدارة-الأعمال",
+      "keyword": "مسارات ادارة الاعمال",
+      "related": [
+        "مواد مسار ادارة الاعمال",
+        "ماجستير الادارة العامة",
+        "ماجستير إدارة الأعمال MBA",
+        "تكلفة ماجستير ادارة الاعمال"
+      ]
+    },
+    {
+      "path": "/ماجستير-عن-بعد-معتمد-في-السعودية",
+      "keyword": "ماجستير عن بعد معتمد في السعودية",
+      "related": [
+        "ماجستير ادارة اعمال",
+        "شروط ماجستير إدارة أعمال",
+        "ماجستير إدارة أعمال عن بعد باللغة العربية",
+        "ماجستير اونلاين معتمد في السعودية"
+      ]
+    },
+    {
+      "path": "/دراسة-الماجستير-في-الإمارات-عن-بعد",
+      "keyword": "دراسة الماجستير في الإمارات عن بعد",
+      "related": [
+        "مواد ماجستير ادارة الاعمال",
+        "تخصصات ماجستير ادارة الاعمال",
+        "تسجيل ماجستير ادارة اعمال"
+      ]
+    },
+    {
+      "path": "/الماجستير-المهني-في-إدارة-الأعمال",
+      "keyword": "الماجستير المهني في إدارة الأعمال",
+      "related": [
+        "الماجستير المهني mba",
+        "الماجستير المهني عن بعد",
+        "الفرق بين الماجستير المهني والاكاديمي"
+      ]
+    },
+    {
+      "path": "/القيادة-الإدارية-أنواعها،-أنماطها،-و",
+      "keyword": "القيادة الادارية",
+      "related": [
+        "انواع القيادة الادارية",
+        "انماط القيادة الادارية",
+        "مهارات القيادة الادارية"
+      ]
+    },
+    {
+      "path": "/blogs/the-rise-of-online-dba-in-malaysia",
+      "keyword": "online dba in malaysia",
+      "related": [
+        "dba in malaysia",
+        "genovasi university",
+        "genovasi university malaysia",
+        "online dba",
+        "doctor of business administration",
+        "Distance learning DBA Malaysia",
+        "Accredited DBA programs"
+      ]
+    },
+    {
+      "path": "/uncategorized/التعلم-عن-بعد",
+      "keyword": "التعلم عن بعد",
+      "related": [
+        "ايجابيات وسلبيات التعلم عن بعد"
+      ]
+    },
+    {
+      "path": "/uncategorized/دراسة-الدكتوراة-عن-بعد-في-ماليزيا-2",
+      "keyword": "دراسة الدكتوراة عن بعد في ماليزيا",
+      "related": [
+        "دراسة الدكتوراه في ماليزيا باللغة العربية",
+        "برامج الدكتوراه عن بعد في ماليزيا",
+        "دكتوراه أونلاين ماليزيا"
+      ]
+    },
+    {
+      "path": "/uncategorized/دراسة-الماجستير-عن-بعد-في-ماليزيا",
+      "keyword": "دراسة الماجستير عن بعد في ماليزيا",
+      "related": [
+        "الماجستير عن بعد",
+        "الدراسة في ماليزيا",
+        "ماستر عن بعد ماليزيا",
+        "شروط دراسة الماجستير في ماليزيا",
+        "كيفية التقديم على الماجستير في ماليزيا"
+      ]
+    },
+    {
+      "path": "/arabic-blogs/مبادئ-إدارة-الأعمال-ودور-الماجستير",
+      "keyword": "مبادئ إدارة الأعمال",
+      "related": [
+        "مبادئ إدارة الأعمال الأساسيات والاتجاهات الحديثة",
+        "ماجستير ادارة اعمال",
+        "ماجستير ادارة اعمال عن بعد",
+        "ماجستير ادارة اعمال mba"
+      ]
+    },
+    {
+      "path": "/arabic-blogs/تعرف-على-الفرق-بين-phd-وdba",
+      "keyword": "الفرق بين phd وdba",
+      "related": [
+        "phd شهادة"
+      ]
+    },
+    {
+      "path": "/arabic-blogs/الفرق-بين-mba-و-dba",
+      "keyword": "الفرق بين MBA وDBA",
+      "related": []
+    },
+    {
+      "path": "/blogs/career-development-the-power-of-mba",
+      "keyword": "career development",
+      "related": []
+    },
+    {
+      "path": "/blogs/mba-certification",
+      "keyword": "mba certification",
+      "related": [
+        "mba degree certificate"
+      ]
+    },
+    {
+      "path": "/blogs/business-venture",
+      "keyword": "business venture",
+      "related": []
+    },
+    {
+      "path": "/arabic-blogs/وظائف-تخصص-إدارة-أعمال",
+      "keyword": "وظائف تخصص إدارة أعمال",
+      "related": [
+        "ادارة اعمال التسويق",
+        "دراسة ماجستير ادارة الاعمال"
+      ]
+    },
+    {
+      "path": "/uncategorized/تخصص-إدارة-الأعمال-الدولية",
+      "keyword": "ادارة الاعمال الدولية",
+      "related": [
+        "تخصص ادارة الاعمال الدولية"
+      ]
+    },
+    {
+      "path": "/arabic-blogs/بكالوريوس-إدارة-الأعمال-عن-بُعد",
+      "keyword": "بكالوريوس إدارة الأعمال عن بعد معتمد في السعودية",
+      "related": []
+    },
+    {
+      "path": "/arabic-blogs/إدارة-الأعمال-وظائفها-وأهميتها-في-تحس",
+      "keyword": "ادارة الاعمال ووظائفها",
+      "related": []
+    },
+    {
+      "path": "/arabic-blogs/أهمية-ماجستير-إدارة-الأعمال",
+      "keyword": "دراسة ماجستير ادارة الاعمال",
+      "related": []
+    },
+    {
+      "path": "/arabic-blogs/أفضل-برامج-ماجستير-إدارة-الأعمال-التي",
+      "keyword": "برامج ماجستير إدارة أعمال",
+      "related": []
+    },
+    {
+      "path": "/arabic-blogs/الشهادات-المطلوبة-في-سوق-العمل",
+      "keyword": "الشهادات المطلوبة في سوق العمل",
+      "related": []
+    },
+    {
+      "path": "/blogs/online-masters-in-malaysia-unlock-opportunities",
+      "keyword": "online masters in malaysia",
+      "related": []
+    },
+    {
+      "path": "/blogs/mba-in-project-management-malaysia",
+      "keyword": "MBA in project management Malaysia",
+      "related": []
+    },
+    {
+      "path": "/blogs/online-mba-in-marketing-malaysia-a-comprehensive-guide",
+      "keyword": "online MBA in marketing Malaysia",
+      "related": []
+    },
+    {
+      "path": "/blogs/online-degree-programs-malaysia",
+      "keyword": "online degree programs malaysia",
+      "related": []
+    },
+    {
+      "path": "/arabic-blogs/الفرق-بين-الإدارة-العامة-وإدارة-الأعم",
+      "keyword": "الفرق بين الادارة العامة وادارة الاعمال",
+      "related": []
+    },
+    {
+      "path": "/arabic-blogs/mba-بالعربي",
+      "keyword": "mba بالعربي",
+      "related": []
+    },
+    {
+      "path": "/arabic-blogs/برامج-الدكتوراه-في-إدارة-الأعمال",
+      "keyword": "برامج الدكتوراة",
+      "related": []
+    },
+    {
+      "path": "/online-masters-in-malaysia",
+      "keyword": "online masters in malaysia",
+      "related": []
+    },
+    {
+      "path": "/mba-in-project-management-in-malaysia",
+      "keyword": "MBA in project management Malaysia",
+      "related": []
+    },
+    {
+      "path": "/online-mba-in-marketing-malaysia",
+      "keyword": "online MBA in marketing Malaysia",
+      "related": []
+    },
+    {
+      "path": "/online-degree-programs-in-malaysia",
+      "keyword": "online degree programs malaysia",
+      "related": []
+    },
+    {
+      "path": "/المسميات-الوظيفية-في-الموارد-البشرية",
+      "keyword": "المسميات الوظيفية في الموارد البشرية",
+      "related": []
+    },
+    {
+      "path": "/project-manager-duties-and-responsibilities",
+      "keyword": "project manager duties and responsibilities",
+      "related": []
+    },
+    {
+      "path": "/الفرق-بين-الوظيفة-والمهنة",
+      "keyword": "الفرق بين الوظيفة والمهنة",
+      "related": []
+    },
+    {
+      "path": "/منهجية-إدارة-المشاريع-الأسس-لتحقيق-ال",
+      "keyword": "منهجية ادارة المشاريع",
+      "related": []
+    },
+    {
+      "path": "/work-satisfaction-key-to-success",
+      "keyword": "work satisfaction",
+      "related": []
+    },
+    {
+      "path": "/الإدارة-الرقمية-مفتاح-النجاح-الحديث",
+      "keyword": "الادارة الرقمية",
+      "related": []
+    },
+    {
+      "path": "/السلامة-والصحة-المهنية",
+      "keyword": "السلامة والصحة المهنية",
+      "related": []
+    },
+    {
+      "path": "/مهارات-التفكير-العليا",
+      "keyword": "مهارات التفكير العليا",
+      "related": []
+    },
+    {
+      "path": "/شهادة-capm-وماجستير-إدارة-الأعمال",
+      "keyword": "شهادة capm",
+      "related": []
+    },
+    {
+      "path": "/الاعتماد-المهني",
+      "keyword": "الاعتماد المهني",
+      "related": []
+    },
+    {
+      "path": "/شهادة-cfa-وماجستير-إدارة-الأعمال-في",
+      "keyword": "cfa شهادة",
+      "related": []
+    },
+    {
+      "path": "/ماجستير-إدارة-الأعمال-وشهادة-cma",
+      "keyword": "cma شهادة",
+      "related": []
+    },
+    {
+      "path": "/هدف-الشهادات-المهنية-لتحقيق-التميز-ال",
+      "keyword": "هدف الشهادات المهنية",
+      "related": []
+    },
+    {
+      "path": "/التسويق-الإلكتروني",
+      "keyword": "كيف ابدا التسويق الالكتروني",
+      "related": []
+    },
+    {
+      "path": "/ما-هو-fintech",
+      "keyword": "ما هو fintech",
+      "related": []
+    },
+    {
+      "path": "/ماجستير-إدارة-الجودة",
+      "keyword": "ماجستير ادارة الجودة",
+      "related": []
+    },
+    {
+      "path": "/ماجستير-إدارة-الأعمال-في-ريادة-الأعما",
+      "keyword": "مفهوم ريادة الأعمال",
+      "related": []
+    },
+    {
+      "path": "/blog/2025/10/02/الإدارة-المالية-2",
+      "keyword": "تخصص finance",
+      "related": []
+    },
+    {
+      "path": "/blog/2025/10/02/مهام-الاتش-ار",
+      "keyword": "مهام الاتش ار",
+      "related": []
+    },
+    {
+      "path": "/مبادئ-المحاسبة-المالية",
+      "keyword": "مبادئ المحاسبة المالية",
+      "related": []
+    },
+    {
+      "path": "/أنواع-القوائم-المالية",
+      "keyword": "انواع القوائم المالية",
+      "related": []
+    },
+    {
+      "path": "/ماجستير-إدارة-أعمال-باللغة-العربية",
+      "keyword": "ماجستير إدارة أعمال باللغة العربية",
+      "related": []
+    },
+    {
+      "path": "/تخصص-تمويل-واستثمار",
+      "keyword": "وظائف تخصص تمويل واستثمار",
+      "related": []
+    },
+    {
+      "path": "/المبادئ-المحاسبية-الدعامة-الأساسية-ل",
+      "keyword": "المبادئ المحاسبية",
+      "related": []
+    },
+    {
+      "path": "/هل-إدارة-الأعمال-لها-مستقبل؟",
+      "keyword": "هل ادارة اعمال لها مستقبل",
+      "related": []
+    },
+    {
+      "path": "/دور-مبادئ-الإدارة-في-نجاح-المؤسسات",
+      "keyword": "مبادئ الادارة",
+      "related": []
+    },
+    {
+      "path": "/masters-and-postgraduate-studies",
+      "keyword": "difference between masters and postgraduate",
+      "related": []
+    },
+    {
+      "path": "/مواد-تخصص-إدارة-الأعمال",
+      "keyword": "مواد تخصص ادارة اعمال",
+      "related": []
+    },
+    {
+      "path": "/دراسة-دكتوراه-إدارة-الأعمال",
+      "keyword": "دراسة دكتوراه",
+      "related": []
+    },
+    {
+      "path": "/ماجستير-إدارة-الأعمال-في-الموارد-البش",
+      "keyword": "وظائف موارد بشرية",
+      "related": []
+    },
+    {
+      "path": "/ماجستير-إدارة-الأعمال",
+      "keyword": "mba عربي",
+      "related": []
+    },
+    {
+      "path": "/الوظائف-الإدارية-الأساسية",
+      "keyword": "ماهي الوظائف الادارية",
+      "related": []
+    },
+    {
+      "path": "/ماجستير-إدارة-الأعمال-تخصص-سلاسل-الإم",
+      "keyword": "تخصص سلاسل الإمداد",
+      "related": []
+    },
+    {
+      "path": "/تخصص-ادارة-اعمال",
+      "keyword": "شروط القبول في تخصص ادارة اعمال",
+      "related": []
+    },
+    {
+      "path": "/مدة-دراسة-ماجستير",
+      "keyword": "مدة دراسة ماجستير",
+      "related": []
+    },
+    {
+      "path": "/وظائف-الإدارة-المالية",
+      "keyword": "وظائف الادارة المالية",
+      "related": []
+    },
+    {
+      "path": "/مستقبل-إدارة-الأعمال",
+      "keyword": "مستقبل إدارة الأعمال بعد الذكاء الاصطناعي",
+      "related": []
+    },
+    {
+      "path": "/دراسة-ماجستير-إدارة-الأعمال",
+      "keyword": "الدراسة عبر الإنترنت",
+      "related": []
+    },
+    {
+      "path": "/digital-entrepreneurship-for-beginners",
+      "keyword": "Digital Entrepreneurship for Beginners",
+      "related": []
+    },
+    {
+      "path": "/تخصص-ماجستير-إدارة-الأعمال",
+      "keyword": "كيف تختار تخصص ماجستير إدارة الأعمال مناسب",
+      "related": []
+    },
+    {
+      "path": "/الاقتصاد-الرقمي",
+      "keyword": "الاقتصاد الرقمي",
+      "related": []
+    },
+    {
+      "path": "/mba-vs-mini-mba",
+      "keyword": "MBA vs Mini-MBA",
+      "related": []
+    },
+    {
+      "path": "/أهم-مهارات-القيادة",
+      "keyword": "ما هي أهم مهارات القيادة التي تحتاجها الشركات الآن؟",
+      "related": []
+    },
+    {
+      "path": "/الذكاء-الاصطناعي-في-إدارة-الأعمال",
+      "keyword": "الذكاء الاصطناعي في اداره الاعمال",
+      "related": []
+    },
+    {
+      "path": "/ماجستير-إدارة-الأعمال-في-إدارة-الجودة",
+      "keyword": "ماجستير ادارة الجودة",
+      "related": []
+    },
+    {
+      "path": "/أنواع-التعلم-النشط",
+      "keyword": "انواع التعلم النشط",
+      "related": []
+    },
+    {
+      "path": "/تقنية-المعلومات",
+      "keyword": "كيف خدمت تقنية المعلومات التعلم عن بعد",
+      "related": []
+    },
+    {
+      "path": "/masters-and-postgraduate-qualifications",
+      "keyword": "difference between masters and postgraduate",
+      "related": [
+        "is postgraduate same as masters"
+      ]
+    },
+    {
+      "path": "/هل-تخصص-ادارة-اعمال-له-مستقبل؟-ودوره-لل",
+      "keyword": "هل تخصص ادارة اعمال له مستقبل",
+      "related": []
+    },
+    {
+      "path": "/شروط-ماجستير-إدارة-أعمال",
+      "keyword": "شروط ماجستير ادارة اعمال",
+      "related": []
+    },
+    {
+      "path": "/شهادة-mba",
+      "keyword": "كيفية الحصول على شهادة mba",
+      "related": []
+    },
+    {
+      "path": "/online-mba-programs",
+      "keyword": "How to balance work and study in online MBA programs",
+      "related": []
+    },
+    {
+      "path": "/بكالوريوس-إدارة-الأعمال-عن-بُعد-2",
+      "keyword": "جامعات بكالوريوس عن بعد",
+      "related": [
+        "هنتكلم عن البكالوريوس بتاعنا"
+      ]
+    },
+    {
+      "path": "/مدة-دراسة-الدكتوراه-في-إدارة-الأعمال",
+      "keyword": "مدة دراسة الدكتوراه",
+      "related": []
+    },
+    {
+      "path": "/business-administrator",
+      "keyword": "what does a business administrator do",
+      "related": []
+    },
+    {
+      "path": "/mba-specializations",
+      "keyword": "most preferred mba specialization",
+      "related": []
+    },
+    {
+      "path": "/hnd-vs-bachelor-degree-choosing-the-right-path",
+      "keyword": "hnd vs bachelor degree",
+      "related": []
+    },
+    {
+      "path": "/phd-in-business-management",
+      "keyword": "phd in business management",
+      "related": []
+    },
+    {
+      "path": "/masters-without-a-degree",
+      "keyword": "can you do a masters without a degree",
+      "related": []
+    },
+    {
+      "path": "/ماجستير-إدارة-الأعمال-في-التسويق",
+      "keyword": "ماجستير تسويق",
+      "related": []
+    },
+    {
+      "path": "/العمل-الجماعي",
+      "keyword": "إيجابيات العمل الجماعي",
+      "related": [
+        "ما هو العمل الجماعي",
+        "مهارات العمل الجماعي"
+      ]
+    },
+    {
+      "path": "/كيف-يعيد-ماجستير-إدارة-الأعمال-تشكيل-م",
+      "keyword": "فوائد التخطيط",
+      "related": []
+    },
+    {
+      "path": "/كيف-يعيد-ماجستير-إدارة-الأعمال-صياغة-م",
+      "keyword": "مهام الإداري",
+      "related": [
+        "الهيكل الاداري"
+      ]
+    },
+    {
+      "path": "/ماجستير-إدارة-الأعمال-وإعادة-تعريف-ال",
+      "keyword": "تعريف التخطيط",
+      "related": []
+    },
+    {
+      "path": "/الحصول-علي-قبول-جامعي-في-بريطانيا",
+      "keyword": "\"الحصول على قبول جامعي في بريطانيا",
+      "related": [
+        "\""
+      ]
+    },
+    {
+      "path": "/إدارة-المخاطر",
+      "keyword": "ادارة المخاطر",
+      "related": []
+    },
+    {
+      "path": "/دراسة-الجدوى",
+      "keyword": "كيفية إعداد دراسة جدوى",
+      "related": []
+    },
+    {
+      "path": "/الفرق-بين-المحاسبة-المالية-والإدارية",
+      "keyword": "الفرق بين المحاسبة المالية والإدارية",
+      "related": []
+    },
+    {
+      "path": "/خطوات-تحسين-كفاءة-سلسلة-التوريد",
+      "keyword": "خطوات تحسين كفاءة سلسلة التوريد",
+      "related": []
+    },
+    {
+      "path": "/أدوات-التحول-الرقمي",
+      "keyword": "أدوات التحول الرقمي",
+      "related": []
+    },
+    {
+      "path": "/مراحل-التحول-داخل-الشركات",
+      "keyword": "مراحل التحول داخل الشركات",
+      "related": []
+    },
+    {
+      "path": "/كيف-تبني-خطة-تسويقية-تضاعف-مبيعاتك",
+      "keyword": "الفانل التسويقي",
+      "related": []
+    },
+    {
+      "path": "/إدارة-المخاطر-المالية",
+      "keyword": "إدارة المخاطر المالية",
+      "related": []
+    },
+    {
+      "path": "/إدارة-المخاطر-في-سلاسل-التوريد",
+      "keyword": "إدارة المخاطر في سلاسل التوريد",
+      "related": []
+    },
+    {
+      "path": "/project-management-credential-vs-an-mba",
+      "keyword": "benefits of project management certification vs mba",
+      "related": []
+    },
+    {
+      "path": "/top-advantages-of-a-supply-chain-management-career",
+      "keyword": "advantages of supply chain management career",
+      "related": []
+    },
+    {
+      "path": "/how-to-write-a-strategic-business-plan",
+      "keyword": "how to write strategic business plan",
+      "related": []
+    },
+    {
+      "path": "/finance-mba-vs-accounting-mba",
+      "keyword": "difference between finance mba and accounting mba",
+      "related": []
+    },
+    {
+      "path": "/lean-six-sigma",
+      "keyword": "lean six sigma",
+      "related": []
+    },
+    {
+      "path": "/what-is-an-msc-degree",
+      "keyword": "what is an msc degree",
+      "related": []
+    },
+    {
+      "path": "/composite-risk-management",
+      "keyword": "composite risk management meaning",
+      "related": [
+        "composite risk assessment"
+      ]
+    },
+    {
+      "path": "/مهام-مدير-الموارد-البشرية",
+      "keyword": "مهام مدير الموارد البشرية",
+      "related": []
+    },
+    {
+      "path": "/مبادئ-إدارة-الأعمال",
+      "keyword": "مبادئ ادارة الاعمال",
+      "related": []
+    },
+    {
+      "path": "/مهام-العلاقات-العامة",
+      "keyword": "مهام العلاقات العامة",
+      "related": []
+    },
+    {
+      "path": "/مجالات-الخدمات-الصحية",
+      "keyword": "أبرز مجالات الخدمات الصحية",
+      "related": []
+    },
+    {
+      "path": "/مهارات-الإداري-الناجح",
+      "keyword": "مهارات الاداري الناجح",
+      "related": [
+        "فن الادارة"
+      ]
+    },
+    {
+      "path": "/التعليم-الإلكتروني",
+      "keyword": "مفهوم التعليم الالكتروني",
+      "related": []
+    },
+    {
+      "path": "/شهادة-mba-2",
+      "keyword": "كيفية الحصول على شهادة mba",
+      "related": []
+    },
+    {
+      "path": "/أقسام-إدارة-الأعمال",
+      "keyword": "اقسام ادارة الاعمال",
+      "related": []
+    },
+    {
+      "path": "/كلية-إدارة-الأعمال",
+      "keyword": "ما هي كلية ادارة الاعمال",
+      "related": []
+    },
+    {
+      "path": "/business-administration-careers",
+      "keyword": "business administration careers",
+      "related": []
+    },
+    {
+      "path": "/importance-of-education-essay",
+      "keyword": "importance of education essay",
+      "related": []
+    },
+    {
+      "path": "/ما-هي-القيادة-الادارية؟-وأهمية-ماجستي",
+      "keyword": "القيادة الادارية",
+      "related": []
+    },
+    {
+      "path": "/إدارة-الخدمات-اللوجستية-ودور-ماجستير",
+      "keyword": "إدارة الخدمات اللوجستية",
+      "related": []
+    },
+    {
+      "path": "/الماجستير-التنفيذي-وماجستير-إدارة-ال",
+      "keyword": "الماجستير التنفيذي",
+      "related": []
+    },
+    {
+      "path": "/الماجستير-المهني-في-إدارة-الأعمال-2",
+      "keyword": "الماجستير المهني",
+      "related": []
+    },
+    {
+      "path": "/شهادات-المحاسبة",
+      "keyword": "شهادات المحاسبة",
+      "related": []
+    },
+    {
+      "path": "/الدكتوراة-المهنية-في-إدارة-الأعمال-قم",
+      "keyword": "دكتوراة مهنية",
+      "related": []
+    },
+    {
+      "path": "/cpd-شهادة-وأهمية-ماجستير-إدارة-الأعمال-ف",
+      "keyword": "cpd شهادة",
+      "related": []
+    },
+    {
+      "path": "/mba-vs-emba",
+      "keyword": "MBA vs EMBA",
+      "related": []
+    },
+    {
+      "path": "/مبادئ-إدارة-الأعمال-ودور-ماجستير-إدار",
+      "keyword": "مبادئ ادارة الاعمال",
+      "related": []
+    },
+    {
+      "path": "/أفضل-الشهادات-المهنية-في-الإدارة-وأهم",
+      "keyword": "افضل الشهادات المهنية في الادارة",
+      "related": []
+    },
+    {
+      "path": "/بكالوريوس-إدارة-أعمال-عن-بُعد-دليلك-ال",
+      "keyword": "بكالوريوس ادارة اعمال عن بعد",
+      "related": []
+    },
+    {
+      "path": "/ما-هو-البكالوريوس؟-وأهمية-بكالوريوس-إ",
+      "keyword": "ما هو البكالوريوس",
+      "related": []
+    },
+    {
+      "path": "/كم-سنة-دراسة-إدارة-الأعمال؟-دليل-شامل-ل",
+      "keyword": "كم سنة دراسة ادارة الاعمال",
+      "related": []
+    }
+  ]
+}
