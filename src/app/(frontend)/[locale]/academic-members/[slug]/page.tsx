@@ -59,10 +59,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       }),
     path: `/academic-members/${member.slug}`,
     locale,
-    // Where the same thing lives in the other language, as the CMS knows it —
-    // Polylang gives each translation its own slug, so this cannot be guessed
-    // from the address. `null` when there is no translation, which is what
-    // keeps a crawler and the switcher off a page that does not exist.
+    // Where the same thing lives in the other language, as the CMS knows it.
+    // A profile is one localized document with one slug, so this is the same
+    // address under the other prefix; going through `translatedPaths` keeps it
+    // on the rule pages and articles follow, where the slug can differ and
+    // `null` is what keeps a crawler and the switcher off a missing page.
     languages: translatedPaths(locale, `/academic-members/${member.slug}`, member.translations),
     image: member.photo?.sourceUrl,
     seo: member.seo,

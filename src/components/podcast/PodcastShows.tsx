@@ -92,7 +92,7 @@ export function PodcastShows({ shows }: { shows: Podcast[] }) {
       {show.description ? (
         <div
           className="prose-ecc mt-12 max-w-3xl"
-          // Block HTML authored by editors in the WordPress admin.
+          // HTML rendered on the server from the rich text editors write in the admin.
           dangerouslySetInnerHTML={{ __html: show.description }}
         />
       ) : null}

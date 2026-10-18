@@ -50,7 +50,7 @@ export default async function ContactPage({
   ]);
 
   // The page names a form; the form itself — its fields, its confirmation
-  // message, where submissions go — is authored under Forms in WordPress.
+  // message, where submissions go — is authored under Forms in the admin.
   const form = await getForm(content.form.slug, locale);
 
   const details = [

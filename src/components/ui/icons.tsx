@@ -287,10 +287,10 @@ function ClockIcon(props: IconProps) {
 }
 
 /**
- * The icon vocabulary offered in the WordPress counter repeater.
+ * The icon vocabulary offered in a counter row's icon select in the admin.
  *
- * These keys are a contract with `Meta::STAT_ICONS` in the plugin — a key
- * present there must exist here, or the counter falls back to the globe.
+ * These keys are a contract with `STAT_ICONS` in `src/payload/fields/icons.ts`:
+ * a key present there must exist here, or the counter falls back to the globe.
  */
 const STAT_ICONS = {
   graduate: GraduateIcon,

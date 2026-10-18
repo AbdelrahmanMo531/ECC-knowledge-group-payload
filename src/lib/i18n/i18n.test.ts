@@ -191,8 +191,9 @@ test('nothing translated means nothing claimed', () => {
 });
 
 test('a language this site does not run in is not offered', () => {
-  // WordPress can hold a French translation before the front-end has routes
-  // for French; linking to it would be linking to a 404.
+  // A translation can name a language the front-end has no routes for (one
+  // carried over from the old site, say); linking to it would be linking to a
+  // 404.
   assert.equal(
     translatedPaths('en', '/insights/x', [{ locale: 'fr', slug: 'bonjour' }]),
     null,

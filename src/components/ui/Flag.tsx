@@ -6,8 +6,8 @@ import { countryCode, flagSrc } from '@/lib/flags';
  * The SVG is served straight from `public/flags` with a plain `<img>` rather
  * than `next/image`: these are 1–2KB vector files that need no resizing, and
  * routing them through the image optimiser would require turning on
- * `dangerouslyAllowSVG`, which would also apply to editor-uploaded SVGs from
- * WordPress. Not worth it for a 24px flag.
+ * `dangerouslyAllowSVG`, which would also apply to editor-uploaded SVGs in
+ * the media library. Not worth it for a 24px flag.
  *
  * With no flag for that country, the code shows in the same badge — a fallback
  * that reads as deliberate rather than broken.

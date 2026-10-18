@@ -41,7 +41,7 @@ import {
 /**
  * Homepage metadata.
  *
- * Rank Math values from the `home` page win when an editor has set them;
+ * Values from the SEO tab of the Home global win when an editor has set them;
  * otherwise the defaults below target the search intent this page is built
  * for — a professional in Egypt or the Gulf looking for a recognised business
  * degree they can study online.

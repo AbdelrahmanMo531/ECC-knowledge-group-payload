@@ -33,7 +33,7 @@ export async function generateMetadata({
   });
 }
 
-/** Strips the HTML WordPress wraps answers in; JSON-LD wants plain text. */
+/** Strips the HTML an answer's rich text renders to; JSON-LD wants plain text. */
 function plain(html: string): string {
   return html
     .replace(/<[^>]*>/g, ' ')

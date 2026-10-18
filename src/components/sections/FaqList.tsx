@@ -41,7 +41,7 @@ export function FaqList({ faqs }: { faqs: FaqItem[] }) {
 
               <div
                 className="prose-ecc px-6 pb-6 text-[0.95rem]"
-                // Answer HTML authored by editors in the WordPress admin.
+                // Answer HTML, rendered on the server from the rich text editors write in the admin.
                 dangerouslySetInnerHTML={{ __html: faq.answer }}
               />
             </details>

@@ -18,7 +18,7 @@ export type Team = {
 };
 
 /**
- * The tab each post type falls into when a person names no team of their own.
+ * The tab each collection falls into when a person names no team of their own.
  *
  * Publishing people without touching the Our People page then still produces
  * two sensible tabs rather than one bucket called "everybody".

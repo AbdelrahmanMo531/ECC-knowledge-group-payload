@@ -23,12 +23,13 @@ import {
  * Any form an editor built, rendered.
  *
  * The fields, their order, their choices, their widths and the conditions that
- * show them all come from WordPress; nothing here is specific to the contact
- * form. Driven by a Server Action, so it submits and reports without JavaScript
- * having to be the thing that sends it: the same `submitForm` runs whether
- * React hydrated or the browser posted the form itself. Without JavaScript a
- * conditional field is simply always shown, and the plugin still ignores the
- * answers to the ones the condition rules out.
+ * show them all come from the form's document under Forms in the admin;
+ * nothing here is specific to the contact form. Driven by a Server Action, so
+ * it submits and reports without JavaScript having to be the thing that sends
+ * it: the same `submitForm` runs whether React hydrated or the browser posted
+ * the form itself. Without JavaScript a conditional field is simply always
+ * shown, and `submitForm` still ignores the answers to the ones the condition
+ * rules out.
  *
  * Inputs keep real `type` and `autocomplete` values, which is what gets a phone
  * keyboard on a phone and the browser's own saved details in the fields.

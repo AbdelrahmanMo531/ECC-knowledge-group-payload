@@ -136,7 +136,7 @@ export function MajorExplorer({ id, majors }: { id?: string; majors: Major[] }) 
               {active.overview ? (
                 <div
                   className="prose-ecc mt-6"
-                  // Overview HTML authored in the WordPress editor.
+                  // Overview HTML, rendered on the server from the rich text in the admin.
                   dangerouslySetInnerHTML={{ __html: active.overview }}
                 />
               ) : (

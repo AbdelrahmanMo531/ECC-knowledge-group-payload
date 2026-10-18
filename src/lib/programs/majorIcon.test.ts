@@ -130,7 +130,7 @@ test('a name that says nothing gets the neutral mark', () => {
 
 /**
  * The vocabulary is written down in three places, and all three have to agree:
- * here, the drawings in `majorIcons.tsx`, and the dropdown the plugin offers.
+ * here, the drawings in `majorIcons.tsx`, and the dropdown the admin offers.
  * A key added to one and forgotten in another shows up as a missing mark on a
  * live page and nowhere else, so it is checked by reading the files.
  */

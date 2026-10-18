@@ -52,7 +52,7 @@ export default async function OurPeoplePage({
     getSiteSettings(locale),
   ]);
 
-  // Two post types, one page. Team members lead, because the board and the
+  // Two collections, one page. Team members lead, because the board and the
   // managers are who a visitor scrolling to "our people" is looking for first;
   // the tab order on the page overrides this anyway once it is filled in.
   const groups = groupByTeam(

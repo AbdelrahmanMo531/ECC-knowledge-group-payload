@@ -53,10 +53,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description: program.seo?.description || program.excerpt,
     path: `/programs/${program.slug}`,
     locale,
-    // Where the same thing lives in the other language, as the CMS knows it —
-    // Polylang gives each translation its own slug, so this cannot be guessed
-    // from the address. `null` when there is no translation, which is what
-    // keeps a crawler and the switcher off a page that does not exist.
+    // Where the same thing lives in the other language, as the CMS knows it.
+    // A programme is one localized document with one slug, so this is the same
+    // address under the other prefix; going through `translatedPaths` keeps it
+    // on the rule pages and articles follow, where the slug can differ and
+    // `null` is what keeps a crawler and the switcher off a missing page.
     languages: translatedPaths(locale, `/programs/${program.slug}`, program.translations),
     image: program.featuredImage?.sourceUrl,
     type: 'article',
@@ -376,7 +377,7 @@ export default async function ProgramPage({ params }: Params) {
                 {program.content ? (
                   <div
                     className="prose-ecc mt-8"
-                    // Block HTML authored by editors in the WordPress admin.
+                    // HTML rendered on the server from the rich text editors write in the admin.
                     dangerouslySetInnerHTML={{ __html: program.content }}
                   />
                 ) : (

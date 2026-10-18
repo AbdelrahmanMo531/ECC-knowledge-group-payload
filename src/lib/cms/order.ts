@@ -20,8 +20,9 @@ export type Ordered = { order?: number | null };
  * what settles two people given the same number: they keep the order the CMS
  * sent them in rather than swapping about between requests.
  *
- * Zero, negative numbers and `null` all mean "not set". WordPress stores an
- * empty number box as 0, and nobody is in position zero.
+ * Zero, negative numbers and `null` all mean "not set". WordPress stored an
+ * empty number box as 0, and the imported content still carries those zeros;
+ * nobody is in position zero.
  */
 export function inEditorOrder<T extends Ordered>(items: T[]): T[] {
   const at = (item: T) =>

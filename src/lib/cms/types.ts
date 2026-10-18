@@ -263,8 +263,8 @@ export type Accreditation = {
 /**
  * Somebody the site shows with a photograph, a name and a role.
  *
- * Two post types share this shape: `academic_member` for faculty, and
- * `team_member` for everybody else on the Our People page — the board, the
+ * Two collections share this shape: `academic-members` for faculty, and
+ * `team-members` for everybody else on the Our People page — the board, the
  * managers, the student network. They are separate collections because
  * everywhere other than that page they are not the same thing: the homepage's
  * academic board is about faculty, and a CFO is not faculty.
@@ -313,7 +313,7 @@ export type Person = {
   detailPath?: string | null;
 };
 
-/** A taxonomy term — currently only an academic's specialisation. */
+/** A classifying term — currently only an academic's specialisation. */
 export type Term = {
   name: string;
   slug: string;
@@ -398,7 +398,7 @@ export type FaqContent = { intro: PageIntro };
 export type RecognitionContent = { intro: PageIntro };
 
 /**
- * The graduate stories page, authored on the page with slug `testimonials`.
+ * The graduate stories page, authored in the Graduate stories global.
  */
 export type StoriesContent = {
   intro: {
@@ -586,7 +586,7 @@ export type QuestionAnswer = {
  * The fees page.
  *
  * The only page whose whole content is meta rather than posts: fees are one
- * document read top to bottom, and splitting a document into a post type
+ * document read top to bottom, and splitting a document into a collection
  * would mean maintaining an order nobody else needs.
  */
 export type FeesContent = {
@@ -751,7 +751,7 @@ export type SiteSettings = {
   verification?: { google?: string | null; bing?: string | null };
 };
 
-/** One social profile, as configured under Settings → ECC Settings. */
+/** One social profile, as configured in Site settings (Settings → Site settings in the admin). */
 export type SocialLink = {
   /** The network's name — also what picks the icon. */
   label: string;
@@ -835,7 +835,7 @@ export type HomeContent = {
  *
  * Like the homepage, every section falls back independently, so a half-filled
  * page still renders a complete one. The partner, accreditation and testimonial
- * cards come from their own post types — only the surrounding copy is here.
+ * cards come from their own collections — only the surrounding copy is here.
  */
 export type AboutContent = {
   intro: {
@@ -883,11 +883,10 @@ export type PeopleContent = {
 };
 
 /**
- * The academic staff directory, authored on the page with slug
- * `our-academic-staff`.
+ * The academic staff directory, authored in the Academic staff global.
  *
- * The academics come from their own post type and the filters from the
- * specialisation taxonomy; this is the copy above them and the page length.
+ * The academics come from their own collection and the filters from the
+ * specializations collection; this is the copy above them and the page length.
  */
 export type StaffContent = {
   intro: {
@@ -902,9 +901,10 @@ export type StaffContent = {
 /**
  * The Contact page, authored in the Contact global.
  *
- * The email address, phone number and postal address stay in Settings → ECC
- * Settings — they belong to the site, not to this page, and the footer reads
- * them too. What is here is only what the contact page itself says.
+ * The email address, phone number and postal address stay in Site settings
+ * (Settings → Site settings in the admin) — they belong to the site, not to
+ * this page, and the footer reads them too. What is here is only what the
+ * contact page itself says.
  */
 export type ContactContent = {
   intro: {

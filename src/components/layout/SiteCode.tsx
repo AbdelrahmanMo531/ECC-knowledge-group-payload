@@ -1,19 +1,19 @@
 import type { SiteSettings } from '@/lib/cms/types';
 
 /**
- * Code an editor pasted into ECC Settings, written into every page.
+ * Code an editor pasted into Site settings, written into every page.
  *
  * This is how an advertising or analytics pixel gets onto the site — Meta,
  * Snapchat, TikTok, a Google tag, a tag manager container — without a deploy.
- * The snippet goes in under Settings → ECC Settings and appears on every page
- * of both languages.
+ * The snippet goes in on the Code tab of Site settings (Settings → Site
+ * settings in the admin) and appears on every page of both languages.
  *
  * `dangerouslySetInnerHTML` is not a shortcut here, it is the requirement: a
  * pixel is `<script>` tags and JavaScript, and anything that escapes it
  * produces text on the page instead of code that runs. What makes that safe is
- * where the string comes from — WordPress only lets a user who may already
- * post unfiltered HTML edit these two boxes, so anyone who can set them can
- * already put a script on the site by other means. It is never visitor input
+ * where the string comes from — only someone signed in to the admin can edit
+ * these two boxes (the `site-settings` global's update access), and the tab
+ * itself asks that only administrators touch it. It is never visitor input
  * and never a URL parameter.
  *
  * Inline scripts run as the browser parses them, so `head` code placed at the

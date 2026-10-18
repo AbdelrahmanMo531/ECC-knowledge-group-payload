@@ -1,7 +1,7 @@
 /**
  * Turning the site's filmed content into something the player understands.
  *
- * Two post types carry video — a graduate's testimonial and a gallery entry —
+ * Two collections carry video — a graduate's testimonial and a gallery entry —
  * and to a grid and a lightbox they are the same thing. Mapping both onto one
  * shape here is what lets them share a component, so a fix to the player is a
  * fix in both places.
@@ -48,13 +48,13 @@ export function playable<T extends { video: string }>(films: T[]): T[] {
 }
 
 /**
- * Every category in use, with counts, in the order WordPress returns them.
+ * Every category in use, with counts, in the order the CMS returns them.
  *
- * Built from the films rather than from the taxonomy, so a category nobody has
- * filed anything under never appears as a filter leading to an empty grid.
- * Ordered by the taxonomy's own order rather than by size: these are a fixed
- * editorial set, and a filter row that reshuffles as videos are added is
- * harder to use than one that stays where it was.
+ * Built from the films rather than from the categories collection, so a
+ * category nobody has filed anything under never appears as a filter leading
+ * to an empty grid. Ordered as the CMS returns them rather than by size:
+ * these are a fixed editorial set, and a filter row that reshuffles as videos
+ * are added is harder to use than one that stays where it was.
  */
 export function categoriesOf(films: GalleryVideo[]): CategoryFilter[] {
   const found = new Map<string, CategoryFilter>();

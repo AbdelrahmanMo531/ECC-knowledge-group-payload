@@ -80,10 +80,16 @@ export const SiteSettings: GlobalConfig = {
           description:
             'Pasted exactly into every page — Google Tag Manager, analytics, the Meta pixel, a chat widget. Only administrators should edit this.',
           fields: [
-            { name: 'code', type: 'group', fields: [
+            {
+              name: 'code',
+              type: 'group',
+              // Runs on every page, unescaped: only administrators may change it.
+              access: { update: ({ req: { user } }) => user?.role === 'admin' },
+              fields: [
               { name: 'head', type: 'code', admin: { language: 'html', description: 'Runs before the page content.' } },
               { name: 'body', type: 'code', admin: { language: 'html', description: 'Runs after the page content.' } },
-            ] },
+              ],
+            },
           ],
         },
       ],

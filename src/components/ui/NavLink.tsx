@@ -6,10 +6,10 @@ import { Link } from '@/components/ui/Link';
 /**
  * Renders a menu item as the right kind of link.
  *
- * WordPress menus mix internal pages with custom links, so an item may point
- * off-site or ask to open in a new tab. Internal links go through `next/link`
- * for client-side navigation; external ones stay plain anchors with the
- * `noreferrer noopener` pair that `target="_blank"` requires.
+ * Menus in the Navigation global mix internal paths with custom links, so an
+ * item may point off-site or ask to open in a new tab. Internal links go
+ * through `next/link` for client-side navigation; external ones stay plain
+ * anchors with the `noreferrer noopener` pair that `target="_blank"` requires.
  */
 export function NavLink({
   item,

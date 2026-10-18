@@ -70,9 +70,10 @@ export function LanguageSwitcher({ className = '' }: { className?: string }) {
  * The addresses this page has already declared for itself.
  *
  * Most routes are the same address in every language, and prefixing is all the
- * switcher needs. An article is not: Polylang gives each translation its own
- * slug, so the Arabic "Hello world!" is at `/ar/insights/<a different slug>`
- * and prefixing lands on a page that does not exist.
+ * switcher needs. An article is not: each language's article is its own
+ * document with its own slug, paired with the other under Translations, so the
+ * Arabic "Hello world!" is at `/<a different slug>/` and prefixing lands on a
+ * page that does not exist.
  *
  * The page already knows — it publishes the pairing as `hreflang` for
  * crawlers — so this reads it back out of the document rather than being told

@@ -33,13 +33,14 @@ import type {
 /**
  * Seeded content.
  *
- * This is the fallback the GraphQL layer serves whenever WordPress is not
- * reachable or a content type has not been populated yet. Copy is drawn from
- * the ECC Brand Identity Guidelines (2026) and the partner descriptions it
+ * This is the fallback `src/lib/cms/api.ts` serves whenever the database is
+ * not reachable or a content type has not been populated yet. Copy is drawn
+ * from the ECC Brand Identity Guidelines (2026) and the partner descriptions it
  * contains, so what renders today is the real brand voice — not lorem ipsum.
  *
- * As each content type is authored in WordPress, its entry here stops being
- * used automatically. Nothing needs deleting.
+ * As each content type is authored in Payload, its entry here stops being
+ * used automatically. Nothing needs deleting. `npm run seed` loads it into
+ * the admin as a starting point.
  */
 
 export const siteSettings: SiteSettings = {
@@ -51,8 +52,7 @@ export const siteSettings: SiteSettings = {
       'Citibank Building, 13th Floor — Al Wasl Branch, Sheikh Rashid Road, next to Wafi City, Dubai, UAE',
     mapUrl: 'https://maps.google.com/?q=Citibank+Building+Sheikh+Rashid+Road+Dubai',
   },
-  // WhatsApp leads, and its address is the contact number above — the same
-  // link the plugin derives when the WhatsApp field is left empty.
+  // WhatsApp leads, and its address is the contact number above.
   social: [
     { label: 'WhatsApp', url: 'https://wa.me/971558931013', sticky: true },
     {
@@ -690,7 +690,7 @@ export const programs: Program[] = [
  * The programmes a partner awards.
  *
  * Matched on the partner slug each programme names, which is the seeded
- * equivalent of the "Academic partner" field in WordPress — the same link,
+ * equivalent of a programme's partner relationship in the CMS — the same link,
  * resolved server-side there and here in one line.
  */
 const awardedBy = (partnerSlug: string): Program[] =>
@@ -702,7 +702,7 @@ const awardedBy = (partnerSlug: string): Program[] =>
  *
  * Mission, values and figures are left empty rather than invented: they are
  * claims about real institutions, and each partner's own page hides those
- * sections until someone authors them in WordPress. The programmes are matched
+ * sections until someone authors them in the admin. The programmes are matched
  * from the awarding body already recorded on each programme, which is the same
  * link the CMS makes explicit.
  */
@@ -833,14 +833,14 @@ export const accreditations: Accreditation[] = [
 
 /**
  * Intentionally empty. Testimonials are attributed to real, named people, so
- * they are only ever shown once genuine ones are entered in WordPress — the
+ * they are only ever shown once genuine ones are entered in the admin — the
  * section hides itself while this list is empty.
  */
 export const testimonials: Testimonial[] = [];
 
 /**
- * Fallback navigation, used until menus are assigned to their locations in
- * WordPress (Appearance → Menus). Each list maps to one registered location.
+ * Fallback navigation, used until the menus in the Navigation global are
+ * filled in. Each list maps to one of its menus.
  */
 export const navigation: NavItem[] = [
   { id: 'nav-home', label: 'Home', href: '/' },
@@ -877,7 +877,7 @@ export const footerProgramsNav: NavItem[] = [
 
 /**
  * Legal links. These resolve through the catch-all page route, so they work as
- * soon as pages with matching slugs are published in WordPress.
+ * soon as pages with matching slugs are published in the admin.
  */
 export const footerLegalNav: NavItem[] = [
   { id: 'fl-privacy', label: 'Privacy policy', href: '/privacy-policy' },
@@ -913,10 +913,10 @@ export const fallbackMenus: SiteMenus = {
 /**
  * Homepage content.
  *
- * Mirrors the fields on the WordPress page with slug `home`, and is what shows
- * until that page is filled in. Copy supplied by ECC, edited for the search
- * intent this page targets: professionals in Egypt and the Gulf looking for a
- * globally recognised BBA, MBA or DBA they can study online, around a job.
+ * Mirrors the fields on the Home global, and is what shows until that global
+ * is filled in. Copy supplied by ECC, edited for the search intent this page
+ * targets: professionals in Egypt and the Gulf looking for a globally
+ * recognised BBA, MBA or DBA they can study online, around a job.
  */
 export const homeContent: HomeContent = {
   hero: {
@@ -946,7 +946,7 @@ export const homeContent: HomeContent = {
   /*
    * The `+` is a prefix, matching how ECC writes these. Icons are left unset so
    * the band renders as plainly as the reference design — add one to a row in
-   * WordPress and it appears above that number.
+   * the admin and it appears above that number.
    */
   stats: [
     { prefix: '+', number: '5,633', label: 'Graduated Learners' },
@@ -1019,7 +1019,7 @@ export const homeContent: HomeContent = {
     heading: 'See what studying with ECC looks like',
     body: 'A short introduction to the group, our partner institutions and the people behind the programmes.',
     // Empty by design — the section stays hidden until a Vimeo link is set on
-    // the `home` page in WordPress.
+    // the Home global in the admin.
     url: '',
     poster: null,
   },
@@ -1049,7 +1049,7 @@ export const homeContent: HomeContent = {
 
 /**
  * Faculty are real, named people with photographs, so they are never seeded —
- * the section stays hidden until academic members are added in WordPress.
+ * the section stays hidden until academic members are added in the admin.
  */
 export const academicMembers: AcademicMember[] = [];
 
@@ -1112,7 +1112,7 @@ export const faqs: FaqItem[] = [
  * The About Us page, as supplied by ECC.
  *
  * The partner, accreditation and testimonial cards on that page come from
- * their own post types; only the copy around them is here.
+ * their own collections; only the copy around them is here.
  */
 export const aboutContent: AboutContent = {
   intro: {
@@ -1191,18 +1191,18 @@ export const contactContent: ContactContent = {
 /**
  * Seeded forms.
  *
- * The plugin publishes an editable Contact form on first run, and from then on
+ * `npm run seed` creates an editable copy of each under Forms, and from then on
  * the CMS is the source. This is what renders before that happens — on a fresh
- * checkout with no WordPress at all, and in the moment between deploying the
- * front-end and installing the plugin. Anything submitted against a seeded form
- * still needs a real form of the same slug in WordPress to be delivered.
+ * checkout with no database at all, and in the moment between deploying and
+ * seeding. Anything submitted against a seeded form still needs a real form of
+ * the same slug under Forms to be stored and delivered.
  */
 /**
  * The institutions offered by the lead form's first select, and the programmes
  * offered by its second.
  *
  * Both are derived from the content above rather than typed out, for the same
- * reason the plugin reads them from the CMS: a list of partners maintained by
+ * reason `getForm` reads them from the CMS: a list of partners maintained by
  * hand is a list that is wrong the week after a partner is added. A programme's
  * group is the institution that awards it, which is what lets the second select
  * narrow to the first one's answer.
@@ -1350,7 +1350,7 @@ export const forms: FormDefinition[] = [
  *
  * Copy only. The people themselves are never seeded — they are real, named
  * individuals with photographs, and inventing them would put words in the
- * mouths of people who did not say them. Until they are added in WordPress the
+ * mouths of people who did not say them. Until they are added in the admin the
  * page renders its introduction and nothing else.
  */
 /**

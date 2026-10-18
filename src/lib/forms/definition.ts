@@ -1,21 +1,23 @@
 /**
  * Form definitions and validation.
  *
- * A form is authored in WordPress — its fields, its labels, its choices — and
- * arrives here as data. Everything in this module is pure, so the browser and
- * the Server Action share one rule set and the rules can be tested without a
- * DOM or a WordPress.
+ * A form is authored under Forms in the admin — its fields, its labels, its
+ * choices — and arrives here as data. Everything in this module is pure, so
+ * the browser and the Server Action share one rule set and the rules can be
+ * tested without a DOM or a database.
  *
- * It is not the last line of defence: `Submissions` in the ecc-core plugin
- * validates the same submission again before storing anything. This is what
- * decides which message appears under which field.
+ * The browser is not the last line of defence: `submitForm`
+ * (`src/app/actions/forms.ts`) re-reads the form's definition from the CMS and
+ * runs the same rules again before storing anything. In the browser, this is
+ * what decides which message appears under which field.
  */
 
 /**
  * The field types a form may use.
  *
- * A contract with the plugin: `Meta::FIELD_TYPES` in class-meta.php lists
- * exactly these, and `DynamicForm` renders exactly these.
+ * A contract with the admin: the field-type select in
+ * `src/payload/collections/Forms.ts` is built from this list, and
+ * `DynamicForm` renders exactly these.
  */
 import { DEFAULT_LOCALE, type Locale } from '../i18n/config.ts';
 import { format, translate } from '../i18n/dictionary.ts';
@@ -45,8 +47,8 @@ export type ConditionOperator = (typeof CONDITION_OPERATORS)[number];
  * One option on a select, radio group or checkbox group.
  *
  * Choices reach the browser already resolved: where they came from — a list an
- * editor typed, or the partners and programmes read out of the CMS — is the
- * plugin's business and does not travel.
+ * editor typed, or the partners and programmes read out of the CMS — is
+ * `getForm`'s business (`src/lib/cms/api.ts`) and does not travel.
  *
  * `group` is what makes a dependent select possible: a programme's group is
  * the institution that awards it, so a programme select can show only the
@@ -136,14 +138,15 @@ export const initialFormState: FormState = {
 /**
  * Slug of the site-wide enquiry form.
  *
- * The one name shared between the plugin, which publishes a form under it
- * (`Forms::LEAD_SLUG`), and the layout, which opens that form from every
- * trigger on the site. Renaming the form in WordPress is safe; changing its
- * slug is what would detach it.
+ * The one name shared between the seeded forms, which define a form under it
+ * (`forms` in `src/lib/content/site.ts`, loaded by `npm run seed`), and the
+ * layout, which opens that form from every trigger on the site. Renaming the
+ * form under Forms in the admin is safe; changing its slug is what would
+ * detach it.
  */
 export const LEAD_FORM_SLUG = 'lead';
 
-/** Longest single value accepted. Matches the plugin. */
+/** Longest single value accepted, in the browser and in `submitForm` alike. */
 export const VALUE_MAX = 5000;
 
 /**
@@ -212,7 +215,7 @@ export function conditionMet(
  * The fields actually in play for a given set of answers.
  *
  * A field whose condition is not met is not shown, not required and not
- * submitted. The same rule runs again in the plugin: deciding it only in the
+ * submitted. The same rule runs again in `submitForm`: deciding it only in the
  * browser would mean a hidden required field blocking every submission that
  * legitimately skipped it.
  */

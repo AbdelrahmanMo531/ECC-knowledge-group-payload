@@ -4,8 +4,9 @@ import type { SocialLink } from '@/lib/cms/types';
 /**
  * The social links pinned down the left of every page.
  *
- * Only the links an editor marked for it — the tick box beside each URL under
- * Settings → ECC Settings. The header and footer list every link, so this is a
+ * Only the links an editor marked for it — the Sticky bar tick box beside each
+ * URL in Site settings (Settings → Site settings in the admin, Social tab).
+ * The header and footer list every link, so this is a
  * shortlist rather than a second copy of the same row: the two or three worth
  * following someone the whole way down a page.
  *

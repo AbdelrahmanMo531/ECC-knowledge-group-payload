@@ -12,11 +12,11 @@ import { t } from '@/lib/i18n/server';
 /**
  * The academic faculty.
  *
- * Faculty only — the board and the managers are a separate post type, and this
+ * Faculty only — the board and the managers are a separate collection, and this
  * section is called the academic board. Each card links to that person's own
  * profile, so the section is a way in rather than a wall of headshots.
  *
- * Renders nothing until members are added in WordPress — these are real, named
+ * Renders nothing until members are added in the admin — these are real, named
  * people with photographs, so the list is never seeded with placeholders.
  */
 export function AcademicMembers({
@@ -34,7 +34,7 @@ export function AcademicMembers({
    * The list arrives in the order an editor arranged it — which is what the
    * directory and the Our People tabs want, and not what a homepage wants. A
    * board that never changes stops being read; showing the newest additions
-   * means adding an academic in WordPress is visible on the front page the
+   * means adding an academic in the admin is visible on the front page the
    * same day.
    *
    * Sorted here rather than in the query because the query is shared with both

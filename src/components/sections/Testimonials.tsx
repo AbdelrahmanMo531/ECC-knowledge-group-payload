@@ -10,7 +10,7 @@ import type { Testimonial } from '@/lib/cms/types';
 import { t } from '@/lib/i18n/server';
 
 /**
- * Renders nothing until real, attributable testimonials exist in WordPress —
+ * Renders nothing until real, attributable testimonials exist in the CMS —
  * quotes are put in named people's mouths, so they are never seeded.
  */
 export function Testimonials({

@@ -26,9 +26,10 @@ const SIZES = {
  *
  * Opens in a new tab rather than navigating away from the programme. The
  * `download` attribute is a hint only: it forces a save dialogue for
- * same-origin files, but the brochures are served from the WordPress origin, so
- * most browsers will show them in their built-in PDF viewer instead — from
- * where the visitor can still save the file.
+ * same-origin files, but a brochure served from another origin — a storage
+ * bucket's public URL rather than the media collection's own route — is shown
+ * in most browsers' built-in PDF viewer instead, from where the visitor can
+ * still save the file.
  *
  * Renders nothing without a file, so an editor who has not uploaded one yet
  * gets no dead button.

@@ -8,12 +8,12 @@
  */
 
 /**
- * The vocabulary, as key to the name an editor reads in WordPress.
+ * The vocabulary, as key to the name an editor reads in the admin.
  *
- * A contract in two directions: `Meta::MAJOR_ICONS` in the plugin offers
- * exactly these, and `majorIcons.tsx` draws exactly these. The labels here are
- * the front-end's copy of the plugin's, kept so a test can tell when the two
- * have drifted apart.
+ * A contract in two directions: the icon select on a major in
+ * `src/payload/collections/Programs.ts` is built from this object, so it offers
+ * exactly these, and `majorIcons.tsx` draws exactly these — which a test
+ * checks, since that half can drift.
  *
  * The set describes the *shape* of a subject rather than the subject itself:
  * "Analytics" serves Business Analytics and Data Science alike, so a major
@@ -93,14 +93,14 @@ const FROM_NAME: [RegExp, MajorIconKey][] = [
 /**
  * The key of the mark to draw before a major's name.
  *
- * An editor picks one in WordPress; where they have not, it is read from the
+ * An editor picks one in the admin; where they have not, it is read from the
  * name. That guess is not a nicety: there are seventeen majors published
  * already with nothing picked on any of them, and a list where some rows carry
  * a mark and others do not reads as broken rather than as unfinished.
  *
- * The guess only understands English. An Arabic translation of a major needs
- * its own pick — or, better, Polylang set to synchronise custom fields, since
- * a mark is the same mark in both languages.
+ * The guess only understands English, so once a major's name is translated
+ * the Arabic page cannot read a mark from it. A pick covers both: the icon
+ * field is not localized, since a mark is the same mark in both languages.
  */
 export function majorIconKey(
   picked: string | null | undefined,

@@ -93,7 +93,7 @@ export default async function RootLayout({
       */}
       <body className="flex min-h-screen flex-col" suppressHydrationWarning>
         {/*
-          Whatever an editor pasted into ECC Settings → Header code, first
+          Whatever an editor pasted into Site settings → Code → Head, first
           thing in the document so it runs before the page it is measuring.
         */}
         <SiteCode code={settings.code} slot="head" />

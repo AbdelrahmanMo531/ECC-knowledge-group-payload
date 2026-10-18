@@ -55,10 +55,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       `${partner.name} in ${partner.country} — an academic partner of ${SITE_NAME}.`,
     path: `/partners/${partner.slug}`,
     locale,
-    // Where the same thing lives in the other language, as the CMS knows it —
-    // Polylang gives each translation its own slug, so this cannot be guessed
-    // from the address. `null` when there is no translation, which is what
-    // keeps a crawler and the switcher off a page that does not exist.
+    // Where the same thing lives in the other language, as the CMS knows it.
+    // A partner is one localized document with one slug, so this is the same
+    // address under the other prefix; going through `translatedPaths` keeps it
+    // on the rule pages and articles follow, where the slug can differ and
+    // `null` is what keeps a crawler and the switcher off a missing page.
     languages: translatedPaths(locale, `/partners/${partner.slug}`, partner.translations),
     image: partner.image?.sourceUrl ?? partner.logo?.sourceUrl,
     seo: partner.seo,

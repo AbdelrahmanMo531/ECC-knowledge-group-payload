@@ -1,11 +1,13 @@
 /**
  * The words the site says for itself.
  *
- * Everything an editor writes lives in WordPress and is translated with
- * Polylang. This is the rest — the chrome that no editor authors: button
- * labels, the words on a lightbox's controls, what a search box says when it
- * finds nothing. Those cannot come from the CMS, because they exist whether or
- * not anyone has written a page yet.
+ * Everything an editor writes lives in Payload and is translated with its
+ * built-in English/Arabic localization. This is the rest — the chrome that no
+ * editor authors: button labels, the words on a lightbox's controls, what a
+ * search box says when it finds nothing. Those cannot depend on the CMS,
+ * because they exist whether or not anyone has written a page yet; the
+ * Interface strings global can reword any of them, and these are what it
+ * falls back to.
  *
  * Keys are grouped by where the words appear rather than by what they say, so
  * a component's strings sit together and a missing one is obvious.
@@ -373,7 +375,7 @@ export const DICTIONARY = {
       'Our accreditations are being added here shortly. An advisor can send the current documentation —',
     'empty.insights': 'No articles published yet',
     'empty.insights.body':
-      'Posts published in the ECC WordPress admin appear here automatically.',
+      'Articles published in the ECC admin appear here automatically.',
 
     /* ---------------------------------------------------------- programmes */
     'programme.about': 'About this programme',
@@ -750,7 +752,7 @@ export const DICTIONARY = {
       'يجري إضافة اعتماداتنا هنا قريبًا. ويمكن لمستشارٍ أن يرسل إليك الوثائق الحالية —',
     'empty.insights': 'لا توجد مقالات منشورة بعد',
     'empty.insights.body':
-      'تظهر هنا تلقائيًا المقالات المنشورة في لوحة تحكم ووردبريس.',
+      'تظهر هنا تلقائيًا المقالات المنشورة في لوحة تحكم ECC.',
 
     /* ---------------------------------------------------------- programmes */
     'programme.about': 'عن هذا البرنامج',
