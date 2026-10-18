@@ -124,37 +124,58 @@ const client = cache(async (): Promise<Payload | null> => {
  */
 const CACHE_VERSION = process.env.VERCEL_DEPLOYMENT_ID || process.env.VERCEL_GIT_COMMIT_SHA || process.env.CACHE_VERSION || 'local';
 
-/** Seconds a read stays cached. Saves purge it sooner. */
-const REVALIDATE = process.env.NODE_ENV === 'production' ? 3600 : false;
+/**
+ * Seconds a read stays cached. Saving anything in the admin purges the
+ * affected tags at once (src/payload/hooks/revalidate.ts), so this is only the
+ * backstop. Development keeps it short: edits still show immediately, and a
+ * change to the normalising code shows within half a minute.
+ */
+const REVALIDATE = process.env.NODE_ENV === 'production' ? 3600 : 30;
+
+/**
+ * Reads already started while rendering this request, by key.
+ *
+ * A page, its layout and its `generateMetadata` each ask for the site
+ * settings, the menus and their own content — six times over for the settings
+ * alone. With the database across the internet (Neon), every repeat was
+ * another round trip. One read per key per request.
+ */
+const inFlight = cache(() => new Map<string, Promise<unknown>>());
 
 /**
  * Runs a read against Payload, cached under `tags`, falling back to `fallback`
  * when Payload is unavailable or the read throws.
- *
- * Development reads are not cached, so an edit in the admin shows on refresh.
  */
-async function read<T>(
+function read<T>(
   key: string[],
   tags: string[],
   fallback: T,
   run: (payload: Payload) => Promise<T | null | undefined>,
 ): Promise<{ data: T; live: boolean }> {
-  const payload = await client();
-  if (!payload) return { data: fallback, live: false };
+  const id = key.join('\u0000');
+  const pending = inFlight();
+  const existing = pending.get(id) as Promise<{ data: T; live: boolean }> | undefined;
+  if (existing) return existing;
 
-  const execute = async () => {
-    try {
-      const result = await run(payload);
-      return result === null || result === undefined ? { data: fallback, live: false } : { data: result, live: true };
-    } catch (error) {
-      console.error(`[cms] Falling back to seeded content for ${key.join(':')}:`, error);
-      return { data: fallback, live: false };
-    }
-  };
+  const result = (async () => {
+    const payload = await client();
+    if (!payload) return { data: fallback, live: false };
 
-  if (REVALIDATE === false) return execute();
+    const execute = async () => {
+      try {
+        const data = await run(payload);
+        return data === null || data === undefined ? { data: fallback, live: false } : { data, live: true };
+      } catch (error) {
+        console.error(`[cms] Falling back to seeded content for ${key.join(':')}:`, error);
+        return { data: fallback, live: false };
+      }
+    };
 
-  return unstable_cache(execute, ['cms', CACHE_VERSION, ...key], { tags, revalidate: REVALIDATE })();
+    return unstable_cache(execute, ['cms', CACHE_VERSION, ...key], { tags, revalidate: REVALIDATE })();
+  })();
+
+  pending.set(id, result);
+  return result;
 }
 
 /** A collection read, published documents only, at `depth`. */

@@ -23,8 +23,9 @@ Local API with no HTTP hop.
 
 ```bash
 npm install
-cp .env.example .env          # set DATABASE_URI and PAYLOAD_SECRET
-npm run dev                   # schema is pushed to the database on first start
+cp .env.example .env          # Windows: copy .env.example .env — then set DATABASE_URI and PAYLOAD_SECRET
+npm run migrate               # create the tables (skip for a localhost database: dev pushes the schema itself)
+npm run dev
 npm run seed                  # optional: load the built-in copy into the CMS
 ```
 

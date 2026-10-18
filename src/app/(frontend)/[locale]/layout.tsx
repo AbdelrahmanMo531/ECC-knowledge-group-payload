@@ -82,7 +82,7 @@ export default async function RootLayout({
   ]);
 
   return (
-    <html lang={LOCALE_META[locale].tag} dir={direction(locale)}>
+    <html lang={LOCALE_META[locale].tag} dir={direction(locale)} data-scroll-behavior="smooth">
       {/*
         Browser extensions — Grammarly is the common one — inject attributes
         such as `data-gr-ext-installed` onto <body> before React hydrates,
