@@ -34,6 +34,19 @@ const dirname = path.dirname(filename);
 
 const smtp = process.env.SMTP_HOST;
 
+function shouldPush(): boolean {
+  const override = process.env.PAYLOAD_DB_PUSH;
+  if (override === 'true') return true;
+  if (override === 'false' || process.env.NODE_ENV === 'production') return false;
+
+  try {
+    const { hostname } = new URL(process.env.DATABASE_URI || '');
+    return ['localhost', '127.0.0.1', '::1', 'host.docker.internal'].includes(hostname);
+  } catch {
+    return false;
+  }
+}
+
 export default buildConfig({
   serverURL: process.env.NEXT_PUBLIC_SITE_URL || '',
   secret: process.env.PAYLOAD_SECRET || '',
@@ -74,10 +87,16 @@ export default buildConfig({
   editor: lexicalEditor(),
   db: postgresAdapter({
     pool: { connectionString: process.env.DATABASE_URI || '' },
-    // Schema changes are pushed automatically in development; production
-    // applies committed migrations (`npm run migrate`).
-    push: process.env.NODE_ENV !== 'production' && process.env.PAYLOAD_DB_PUSH !== 'false',
+    // Schema changes are pushed automatically in development — but only to a
+    // database on this machine. Push inspects the whole schema on every start
+    // (hundreds of queries), which against a hosted database such as Neon
+    // makes each cold page take 10–20 seconds. A hosted database uses the
+    // committed migrations (`npm run migrate`), as production does.
+    // PAYLOAD_DB_PUSH=true / false overrides either way.
+    push: shouldPush(),
     migrationDir: path.resolve(dirname, 'migrations'),
+    // DB_LOG=true prints every SQL query — for finding slow pages.
+    logger: process.env.DB_LOG === 'true',
   }),
   sharp,
   email: smtp
