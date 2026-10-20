@@ -83,19 +83,18 @@ function Counter({
     };
   }, [animatable, grouped, target]);
 
-  // Icons are optional on each row; nothing is inferred when one is not set,
-  // so the band stays as plain as the design calls for unless asked otherwise.
-  // A band rendered with `icons={false}` drops them whatever the rows say.
-  const Icon = icons && stat.icon ? statIcon(stat.icon, stat.label) : null;
+  // The icon an editor picked for the row, or one read from its label when
+  // none was. A band rendered with `icons={false}` drops them altogether.
+  const Icon = icons ? statIcon(stat.icon, stat.label) : null;
 
   return (
     <div className={`text-center ${compact ? 'px-3 py-1' : 'px-3 py-2'}`}>
       {Icon ? (
         <span
           aria-hidden
-          className="mx-auto mb-3 flex h-9 w-9 items-center justify-center text-brand-teal/45"
+          className="mx-auto mb-2.5 flex h-9 w-9 items-center justify-center text-brand-teal/70"
         >
-          <Icon width={22} height={22} />
+          <Icon width={26} height={26} />
         </span>
       ) : null}
 
@@ -109,7 +108,7 @@ function Counter({
       <p
         dir="ltr"
         className={`flex items-baseline justify-center font-bold leading-none tracking-[-0.03em] text-brand-ink ${
-          compact ? 'text-3xl sm:text-4xl' : 'text-4xl sm:text-5xl'
+          compact ? 'text-3xl sm:text-4xl' : 'text-3xl sm:text-[2.5rem]'
         }`}
       >
         {stat.prefix ? <span>{stat.prefix}</span> : null}
@@ -151,7 +150,7 @@ export function Stats({
       <Container size="wide">
         <dl
           className={`grid grid-cols-2 sm:grid-cols-3 lg:flex lg:items-start lg:justify-between lg:gap-8 ${
-            compact ? 'gap-y-8 py-8 lg:py-9' : 'gap-y-10 py-10 lg:py-12'
+            compact ? 'gap-y-8 py-8 lg:py-9' : 'gap-y-7 py-7 lg:py-8'
           }`}
         >
           {stats.map((stat, index) => (

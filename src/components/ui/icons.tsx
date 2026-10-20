@@ -319,22 +319,24 @@ export function statIcon(key: string | null | undefined, label: string) {
   }
 
   const text = label.toLowerCase();
+  const has = (...words: string[]) => words.some((word) => text.includes(word));
 
-  if (text.includes('graduat') || text.includes('learner') || text.includes('student')) {
+  // English and Arabic, since the label is whatever language the page is in.
+  if (has('graduat', 'learner', 'student', 'خريج', 'طالب', 'طلاب', 'متعلم', 'دارس')) {
     return GraduateIcon;
   }
-  if (text.includes('accredit') || text.includes('award') || text.includes('recognition')) {
+  if (has('accredit', 'award', 'recognition', 'اعتماد', 'اعتمادات', 'جائز', 'اعتراف')) {
     return BadgeIcon;
   }
-  if (text.includes('professor') || text.includes('faculty') || text.includes('tutor')) {
+  if (has('professor', 'faculty', 'tutor', 'أستاذ', 'أساتذة', 'استاذ', 'اساتذة', 'محاضر', 'هيئة التدريس')) {
     return TeacherIcon;
   }
-  if (text.includes('course') || text.includes('programme') || text.includes('program')) {
+  if (has('course', 'programme', 'program', 'دورة', 'دورات', 'برنامج', 'برامج', 'مقرر')) {
     return BookIcon;
   }
-  if (text.includes('module') || text.includes('subject')) return ModulesIcon;
-  if (text.includes('lecture') || text.includes('video')) return LectureIcon;
-  if (text.includes('hour') || text.includes('time')) return ClockIcon;
+  if (has('module', 'subject', 'وحدة', 'وحدات', 'مادة', 'مواد')) return ModulesIcon;
+  if (has('lecture', 'video', 'محاضرة', 'محاضرات', 'فيديو')) return LectureIcon;
+  if (has('hour', 'time', 'ساعة', 'ساعات', 'وقت')) return ClockIcon;
 
   return GlobeIcon;
 }

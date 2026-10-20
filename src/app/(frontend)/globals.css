@@ -192,6 +192,26 @@
   animation: ecc-marquee 42s linear infinite;
 }
 
+/*
+  Right to left, the track is anchored to the right edge and its second copy
+  sits to the left of the first. Sliding it left, as in English, pulled both
+  copies off screen and left a blank strip until the loop restarted. In Arabic
+  it slides right instead — the same half-width loop, mirrored, moving with the
+  reading direction.
+*/
+@keyframes ecc-marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+[dir='rtl'] .ecc-marquee {
+  animation-name: ecc-marquee-rtl;
+}
+
 @media (prefers-reduced-motion: reduce) {
   /*
      No automatic movement: the strip becomes a scroller the visitor drives.
