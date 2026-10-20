@@ -46,7 +46,13 @@ export function Hero({
               {hero.eyebrow}
             </span>
 
-            <h1 className="mt-7 text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-brand-beige sm:text-5xl lg:text-[3.5rem]">
+            {/*
+              Arabic is set smaller and looser: its letterforms are taller than
+              Latin at the same size, and tight leading clips the marks above
+              and below the line. Negative tracking is dropped too — letter
+              spacing pulls apart the joins Arabic letters depend on.
+            */}
+            <h1 className="mt-7 text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-brand-beige sm:text-5xl lg:text-[3.5rem] rtl:text-3xl rtl:leading-[1.35] rtl:tracking-normal sm:rtl:text-4xl lg:rtl:text-[2.75rem]">
               {hero.heading}
             </h1>
 
