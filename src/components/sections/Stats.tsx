@@ -14,8 +14,9 @@ import type { Stat } from '@/lib/cms/types';
  * touched. Brand gold belongs to neither neighbour, so the numbers register as
  * their own statement.
  *
- * Numerals are set in the sans face at weight 700 — big, plain and legible at a
- * glance — with the label in turquoise beneath. Prefix and suffix are separate
+ * On the home band each counter sits beside its icon, the figure above its
+ * label; bands without icons (About, partners) keep the centred stack of a big
+ * numeral over a turquoise label. Prefix and suffix are separate
  * repeater fields, so `+` renders ahead of the digits without the animation
  * having to work out where the number starts.
  */
@@ -87,37 +88,53 @@ function Counter({
   // none was. A band rendered with `icons={false}` drops them altogether.
   const Icon = icons ? statIcon(stat.icon, stat.label) : null;
 
-  return (
-    <div className={`text-center ${compact ? 'px-3 py-1' : 'px-3 py-2'}`}>
-      {Icon ? (
+  /*
+    The number is pinned left to right in both languages. The prefix, the
+    digits and the suffix are three flex items, and a flex row lays out along
+    the reading direction — so in Arabic "+130" came out as "130+". A number
+    is written the same way in Arabic as in English; only the label turns
+    round.
+  */
+  const number = (
+    <p
+      dir="ltr"
+      className={`flex w-fit items-baseline font-bold leading-none tracking-[-0.03em] text-brand-ink ${
+        Icon ? 'text-2xl sm:text-[1.75rem]' : compact ? 'mx-auto text-3xl sm:text-4xl' : 'mx-auto text-3xl sm:text-[2.5rem]'
+      }`}
+    >
+      {stat.prefix ? <span>{stat.prefix}</span> : null}
+      <span ref={ref} className="tabular-nums">
+        {display}
+      </span>
+      {stat.suffix ? <span>{stat.suffix}</span> : null}
+    </p>
+  );
+
+  // With an icon: icon beside, number and label stacked next to it — the
+  // label carries the weight, the number reads as its figure.
+  if (Icon) {
+    return (
+      <div className="flex items-center justify-center gap-3 px-2 py-1 xl:justify-start">
         <span
           aria-hidden
-          className="mx-auto mb-2.5 flex h-9 w-9 items-center justify-center text-brand-teal/70"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-teal/[0.08] text-brand-teal sm:h-14 sm:w-14"
         >
-          <Icon width={26} height={26} />
+          <Icon width={30} height={30} />
         </span>
-      ) : null}
 
-      {/*
-        Pinned left to right, in both languages. The prefix, the digits and the
-        suffix are three flex items, and a flex row lays out along the reading
-        direction — so in Arabic "+130" came out as "130+". A number is written
-        the same way in Arabic as in English; only the label beneath it turns
-        round. `justify-center` means the pinning costs nothing in alignment.
-      */}
-      <p
-        dir="ltr"
-        className={`flex items-baseline justify-center font-bold leading-none tracking-[-0.03em] text-brand-ink ${
-          compact ? 'text-3xl sm:text-4xl' : 'text-3xl sm:text-[2.5rem]'
-        }`}
-      >
-        {stat.prefix ? <span>{stat.prefix}</span> : null}
-        <span ref={ref} className="tabular-nums">
-          {display}
-        </span>
-        {stat.suffix ? <span>{stat.suffix}</span> : null}
-      </p>
+        <div className="flex min-w-0 flex-col items-start">
+          {number}
+          <p className="mt-1 text-sm font-medium leading-snug text-brand-turquoise sm:text-[1.0625rem]">
+            {stat.label}
+          </p>
+        </div>
+      </div>
+    );
+  }
 
+  return (
+    <div className={`text-center ${compact ? 'px-3 py-1' : 'px-3 py-2'}`}>
+      {number}
       <p
         className={`leading-snug text-brand-turquoise ${
           compact ? 'mt-2 text-sm' : 'mt-3 text-sm sm:text-base'
@@ -149,12 +166,14 @@ export function Stats({
     <section id={id} className="scroll-mt-[9.5rem] bg-brand-gold">
       <Container size="wide">
         <dl
-          className={`grid grid-cols-2 sm:grid-cols-3 lg:flex lg:items-start lg:justify-between lg:gap-8 ${
-            compact ? 'gap-y-8 py-8 lg:py-9' : 'gap-y-7 py-7 lg:py-8'
+          className={`grid grid-cols-2 sm:grid-cols-3 ${
+            compact ? 'lg:flex lg:items-start lg:justify-between lg:gap-8' : 'xl:flex xl:items-center xl:justify-between xl:gap-6'
+          } ${
+            compact ? 'gap-y-8 py-8 lg:py-9' : 'gap-y-6 py-5 lg:py-6'
           }`}
         >
           {stats.map((stat, index) => (
-            <div key={`${index}-${stat.label}`} className="lg:flex-1">
+            <div key={`${index}-${stat.label}`} className={compact ? 'lg:flex-1' : 'xl:flex-1'}>
               <dt className="sr-only">{stat.label}</dt>
               <dd>
                 <Counter stat={stat} icons={icons} compact={compact} />
