@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload';
 
 import { anyone, authenticated } from '../access';
+import { revalidates } from '../hooks/revalidate';
 
 /**
  * Every image and PDF on the site.
@@ -12,6 +13,12 @@ export const Media: CollectionConfig = {
   slug: 'media',
   admin: { group: 'Content' },
   access: { read: anyone, create: authenticated, update: authenticated, delete: authenticated },
+  // An image can appear on any page, so changing one — new alt text, a
+  // replaced file — refreshes everything that may show it.
+  hooks: revalidates(
+    'settings', 'programs', 'partners', 'testimonials', 'posts', 'pages', 'home',
+    'faculty', 'team', 'accreditations', 'videos', 'podcasts',
+  ),
   upload: {
     mimeTypes: ['image/*', 'application/pdf', 'video/mp4', 'audio/mpeg'],
     focalPoint: true,

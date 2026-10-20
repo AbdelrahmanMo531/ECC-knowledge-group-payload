@@ -9,6 +9,7 @@ import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical
 import { localePath, type Locale } from '@/lib/i18n/config';
 import { siteUrl } from '@/lib/env';
 
+import { mediaUrl } from './media-url';
 import type { MediaItem, SeoFields } from './types';
 
 export { fill } from './fill';
@@ -50,7 +51,7 @@ export function toMedia(value: unknown): MediaItem | null {
   if (!isObject(value) || !isMedia(value)) return null;
 
   return {
-    sourceUrl: String(value.url),
+    sourceUrl: mediaUrl(String(value.url)),
     altText: String(value.alt ?? ''),
     mediaDetails:
       typeof value.width === 'number' && typeof value.height === 'number'

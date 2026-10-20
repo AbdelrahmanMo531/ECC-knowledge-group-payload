@@ -19,6 +19,7 @@ import { toCurriculum } from '@/lib/programs/curriculum';
 import { summarise } from '@/lib/text';
 
 import { absolute, fill, lines, normalise, toHTML, toMedia, toSeo } from './normalise';
+import { mediaUrl } from './media-url';
 import { inEditorOrder } from './order';
 import type {
   AboutContent,
@@ -376,7 +377,8 @@ function toBrochure(value: unknown): Brochure | null {
   const doc = value as Record<string, unknown>;
   if (!str(doc.url)) return null;
 
-  return { url: str(doc.url), title: str(doc.alt) || str(doc.filename) || null };
+  // A path, so the download stays same-origin (browsers ignore `download` otherwise).
+  return { url: mediaUrl(str(doc.url)), title: str(doc.alt) || str(doc.filename) || null };
 }
 
 function toAccreditation(doc: Record<string, unknown>): Accreditation {
